@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Continuous Deployment from Git to AWS Amplify
+How to use AWS Amplify to perform automatic site updates whenever a Git repo is updated
+---
+---
+## Step 1 - Create a repo on GitHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[GitHub Docs > Create a repo](https://docs.github.com/en/github/getting-started-with-github/create-a-repo)
 
-## Available Scripts
+## Step 2 - Connect repo to AWS
 
-In the project directory, you can run:
+To connect the GitHub repo, log in to the AWS Amplify Console and choose **Get Started** under **Deploy**.
 
-### `yarn start`
+Select **GitHub** and click **Continue**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![host your web app](docs/host-your-web-app.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Select the GitHub repo and branch, then click **Next**.
 
-### `yarn test`
+![add repository branch](docs/add-repository-branch.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Review build settings, making any needed edits to complete a build.
 
-### `yarn build`
+![configure build settings](docs/configure-build-settings.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Note:** Environment variables may be added under *Advanced settings*.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![configure build advanced settings](docs/advanced-settings.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Review the Repository details and App settings, then click **Save and deploy**.
 
-### `yarn eject`
+![review configuration](docs/review-configuration.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A Build Status page will appear.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![build status](docs/build-status.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clicking on the Git branch name (*main* in example above) shows the details of the deployed site.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![deployed site details](docs/deployed-site-details.png)
 
-## Learn More
+---
+## Other Resources
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### [Tutorial - Host a Static Website using AWS Amplify](https://aws.amazon.com/getting-started/hands-on/host-static-website/)
+#### What You Will Learn
+ * **Host a static website** usng [AWS Amplify](https://aws.amazon.com/amplify/console/) in the AWS console. AWS Amplify provides fully managed hosting for static websites and web apps. Amplify’s hosting solution leverages Amazon CloudFront and Amazon S3 to deliver your site assets via the AWS content delivery network (CDN).
+ * **Set up continuous deployment:** Amplify offers a Git-based workflow with continuous deployment, allowing you to automatically deploy updates to your site on every code commit.
